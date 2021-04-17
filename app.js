@@ -1,9 +1,9 @@
 const express = require('express')
-const cors=require('cors');
+//const cors=require('cors');
 const app = express()
 const mongoose  = require('mongoose')
 require('dotenv').config();
-const PORT = process.env.PORT || 5000
+const PORT = process.env.PORT 
 //const {MONGOURI} = require('./config/keys')
 
 const MONGOURI=process.env.ATLAS_URI;
@@ -31,11 +31,11 @@ mongoose.connection.on('error',(err)=>{
 require('./models/user')
 require('./models/post')
 
-app.use(cors())
+//app.use(cors())
 app.use(function(req,res,next){
     //res.setHeader('Access-Control-Allow-Origin', '*');
   //  res.setHeader('Access-Control-Allow-Headers', 'Origin,X-Required-With,Content-Type,Accept');
-    res.setHeader('Access-Control-Allow-Methods', 'POST,GET,PUT,DELETE, OPTIONS');
+   // res.setHeader('Access-Control-Allow-Methods', 'POST,GET,PUT,DELETE, OPTIONS');
     next();
 })
 app.use(express.json())
