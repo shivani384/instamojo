@@ -12,7 +12,7 @@ const Profile  = ()=>{
         "Authorization":"Bearer "+localStorage.getItem('jwt')
     };
     useEffect(()=>{
-       fetch(`http://localhost:5000/user/${userid}`,{
+       fetch(`/user/${userid}`,{
            headers:head
            
        }).then(res=>res.json())
@@ -25,7 +25,7 @@ const Profile  = ()=>{
 
 
     const followUser = ()=>{
-        fetch('http://localhost:5000/follow',{
+        fetch('/follow',{
             method:"put",
             headers: { "Content-Type":"application/json",
             "Authorization":"Bearer "+localStorage.getItem('jwt')
@@ -51,7 +51,7 @@ const Profile  = ()=>{
         })
     }
     const unfollowUser = ()=>{
-        fetch('http://localhost:5000/unfollow',{
+        fetch('/unfollow',{
             method:"put",
             headers: head,
             body:JSON.stringify({

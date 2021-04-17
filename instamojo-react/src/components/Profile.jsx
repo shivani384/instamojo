@@ -11,7 +11,7 @@ const Profile  = ()=>{
         "Authorization":"Bearer "+localStorage.getItem("jwt")
     }
     useEffect(()=>{
-       fetch('http://localhost:5000/mypost',{
+       fetch('/mypost',{
            headers: head
            
        }).then(res=>res.json())
@@ -34,7 +34,7 @@ const Profile  = ()=>{
         .then(data=>{
     
        
-           fetch('http://localhost:5000/updatepic',{
+           fetch('/updatepic',{
                method:"put",
                headers:head,
                body:JSON.stringify({

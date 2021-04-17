@@ -12,7 +12,7 @@ const CretePost = ()=>{
       //  console.log(header);
        if(url){
            console.log("useeffect");
-        fetch("http://localhost:5000/createpost",{
+        fetch("/createpost",{
             method:"post",
             headers:{
                 "Content-Type":"application/json",
